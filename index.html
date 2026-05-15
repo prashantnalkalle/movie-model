@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Movie Model</title>
+	<link rel="shortcut icon" href="https://assets.nflxext.com/ffe/siteui/common/icons/nficon2023.ico">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="./assests/css/style.css">
+</head>
+<body>
+	<div class="container pt-4">
+		<header class="header">
+			<div class="row">
+				<div class="col-md-6">
+					<a href="#"><img src="./assests/img/logo.svg" alt="logo"></a>
+				</div>
+				<div class="col-md-6 d-flex justify-content-end align-items-center">
+					<button class="btn btn-sm ntflx-primary-btn" id="showbtn">ADD Movie</button>
+				</div>
+			</div>
+		</header>
+	</div>
+	<div class="container-fluid mt-5">
+		<div class="row" id="moviecontainer">
+			<div class="col-md-3">
+				<div class="card moviecard">
+					<div class="card-header d-flex justify-content-between align-items-center">
+						<h2>title</h2>
+						<span class="badge badge-success">5</span>
+					</div>
+					<div class="card-body">
+						<figure>
+							<img src="https://m.media-amazon.com/images/M/MV5BYzU2MzZiOTEtZTgwOS00MTdlLWJmMDQtNjdjOGIxYTA0NTYxXkEyXkFqcGc@._V1_.jpg"
+							 alt="salar"
+							 title="salar">
+							<figcaption>
+								<h4>movie title</h4>
+								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+									 Nam, rem, maiores officia assumenda quibusdam magni quam
+									 perferendis a ea sapiente in sed quaerat mollitia? Fuga
+									 dolore illum corrupti quibusdam magni.</p>
+							</figcaption>
+						</figure>
+					</div>
+					<div class="card-footer d-flex justify-content-between align-items-center">
+						<button class="btn btn-sm ntflx-primary-btn">Edit</button>
+						<button class="btn btn-sm ntflx-secondary-btn">Remove</button>
+
+			
+					</div>
+				</div>
+
+			
+			</div>
+		</div>
+
+		<div class="backdrop closebtn" id="backdrop"></div>
+		<div class="movieModel" id="movieModel">
+					<form id="movie">
+						<div class="card addmovie">
+							<div class="card-header d-flex justify-content-between">
+								<h3>Add Movie Detail</h3>
+								<i role="button" class="fa-solid fa-xmark fa-2x closebtn"></i>
+							</div>
+							<div class="card-body">
+								<div class="form-group">
+									<label for="MovieName">MovieName</label>
+									<input type="text" class="form-control" id="MovieName">
+								</div>
+								<div class="form-group">
+									<label for="movieImg">Movie Image</label>
+									<input type="text" class="form-control" id="movieImg">
+								</div>
+								<div class="form-group">
+									<label for="movieDescription">movieDescription</label>
+									<textarea  rows="4" type="text" class="form-control" id="movieDescription"></textarea>
+								</div>
+								<div class="form-group">
+									<label for="movieRating">Movie Rating</label>
+									<select name="movieRating" class="form-control" id="movieRating">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option> 
+										<option value="5">5</option>
+									</select>
+								</div>
+
+								
+							</div>
+							<div class="card-footer d-flex justify-content-between">
+								<button class="btn btn-sm ntflx-secondary-btn" id="addmovie">Add movie</button>
+								<button type="button" class="btn btn-sm ntflx-secondary-btn d-none" id="updatemovie">update detail</button>
+
+								<button type="button" class="btn btn-sm ntflx-primary-btn closebtn">Close</button>
+
+							</div>
+						</div>
+					</form>
+		</div>
+	</div>
+	<script src="./assests/js/app.js"></script>
+</body>
+</html>

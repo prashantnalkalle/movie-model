@@ -1,0 +1,186 @@
+:root {
+    --primary-color: #e50914;
+    --primary-hover-color: #c11119;
+    --sec-color: #212529;
+    --color-white: #fff;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+}
+
+body::after{
+    content: '';
+   background-image: linear-gradient(360deg,
+      rgba(0, 0, 0, 0.85) 3%,
+      rgba(0, 0, 0, 0.8465) 11.08%,
+      rgba(0, 0, 0, 0.8361) 19.17%,
+      rgba(0, 0, 0, 0.8187) 27.25%,
+      rgba(0, 0, 0, 0.7944) 35.33%,
+      rgba(0, 0, 0, 0.7632) 43.42%,
+      rgba(0, 0, 0, 0.725) 51.5%,
+      rgba(0, 0, 0, 0.6868) 59.58%,
+      rgba(0, 0, 0, 0.6556) 67.67%,
+      rgba(0, 0, 0, 0.6313) 75.75%,
+      rgba(0, 0, 0, 0.6139) 83.83%,
+      rgba(0, 0, 0, 0.6035) 91.92%,
+      rgba(0, 0, 0, 0.6)100%
+    ),url(../img/bgImg.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(3px);
+    position: absolute;
+    top :0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.header{
+    width: 100%;
+}
+
+.header  img{
+    width: 40%;
+}
+
+.ntflx-primary-btn {
+    background-color: #e50914;
+    color: var(--color-white) !important;
+}
+
+.ntflx-secondary-btn {
+    background-color: var(--sec-color);
+    color: var(--color-white) !important;
+}
+
+.card{
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.card-header h2{
+    color: var(--color-white);
+}
+
+.card-header span{
+    font-size: 20px;
+}
+
+
+.moviecard{
+    overflow: hidden;
+}
+
+.moviecard h2{
+    height: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+
+.moviecard figure{
+    height: 250px;
+    margin: 0;
+    position: relative;
+}
+
+
+.moviecard figure img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.moviecard figcaption {
+   position: absolute;
+   top: 30%;
+   left: 0;
+   right: 0;
+   background-color: rgba(0, 0, 0, 0.6);
+   color: var(--color-white);
+   padding: 10px;
+   height: 70%;
+   overflow-y: auto;
+   transform: scale(0);
+   transition: all .4s linear;
+   opacity: 0;
+}
+
+.moviecard figure:is(:hover,:active,:focus) figcaption{
+    transform: scale(1);
+    opacity: 1;
+}
+
+.backdrop{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0,0.75);
+    position: fixed;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+   z-index:0;
+   display: none;
+   animation: fadeIn .4s ease-in-out;
+
+}
+
+.backdrop.active {
+    display: block;
+
+}
+
+
+.movieModel{
+    width: 60%;
+    position: fixed;
+    background-color: #fff;
+    left: 20%;
+    top: 20%;
+    z-index: 1;
+    display: none;
+    animation: slidedown .4s ease-in-out;
+}
+
+.movieModel.active{
+    display: block;
+}
+
+
+.movieModel .addmovie{
+    
+    background-color: #fff;
+}
+
+
+@keyframes slidedown {
+    from{
+        transform: translateY(-50%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
+
