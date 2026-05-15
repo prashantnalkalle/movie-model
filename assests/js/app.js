@@ -88,7 +88,7 @@ function onsubmithandl(ele){
     
   }
 
-  moviesArr.push(newmovie)
+  movieArr.push(newmovie)
 
   localStorage.setItem('movieArr',JSON.stringify(movieArr))
 
@@ -135,9 +135,9 @@ function OnRemove(ele){
   let getconfirm = confirm('Are You Want To Remove?')
 
   if(getconfirm){
-  let index = moviesArr.findIndex(ele => ele.movieId == removeId )
+  let index = movieArr.findIndex(ele => ele.movieId == removeId )
 
-  let removeObj = moviesArr.splice(index,1)
+  let removeObj = movieArr.splice(index,1)
 
   localStorage.setItem('movieArr',JSON.stringify(movieArr))
 
@@ -153,7 +153,7 @@ function onedit(ele){
 
   localStorage.setItem('editId',editId)
 
-  let editObj = moviesArr.find(ele => ele.movieId == editId)
+  let editObj = movieArr.find(ele => ele.movieId == editId)
 
   onshowhandl();
 
@@ -177,9 +177,9 @@ function onupdatehandl(){
     movieId : updateId
   }
 
-  let index = moviesArr.findIndex(ele => ele.movieId == updateId)
+  let index = movieArr.findIndex(ele => ele.movieId == updateId)
 
-  moviesArr[index] = updateObj
+  movieArr[index] = updateObj
 
   localStorage.setItem('movieArr',JSON.stringify(movieArr))
 
