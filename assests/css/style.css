@@ -184,3 +184,14 @@ body::after{
     
 }
 
+@media (max-width : 600px) {
+    .moviecard{
+        margin-top: 10px;
+    }
+
+    .movieModel{
+        transform: translateY(-20%);
+    }
+
+}
+

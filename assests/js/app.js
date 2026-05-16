@@ -154,6 +154,7 @@ swalWithBootstrapButtons.fire({
   cancelButtonText: "No, cancel!",
   reverseButtons: true
 }).then((result) => {
+  if(result.isConfirmed){
   let index = movieArr.findIndex(ele => ele.movieId == removeId )
 
   let removeObj = movieArr.splice(index,1)
@@ -164,7 +165,7 @@ swalWithBootstrapButtons.fire({
   ele.closest('.col-md-3').remove()
 
   snackbar(`The Movie Is Removed Successfully!!!`)
-
+  }
 });
 
 }
