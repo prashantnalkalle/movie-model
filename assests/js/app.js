@@ -11,9 +11,6 @@ const movieRating = document.getElementById('movieRating')
 const addmovie = document.getElementById('addmovie')
 const updatemovie = document.getElementById('updatemovie')
 
-
-
-
 let movieArr = []
 
 if(JSON.parse(localStorage.getItem('movieArr'))){
@@ -21,6 +18,13 @@ if(JSON.parse(localStorage.getItem('movieArr'))){
 }
 
 
+function snackbar(msg){
+  Swal.fire({
+    title : msg,
+    icon : 'success',
+    timer : 3000
+  })
+}
 
 function badgecolor(rating){
   if(rating >=4){
@@ -126,15 +130,30 @@ function onsubmithandl(ele){
 
   onshowhandl();
 
+  snackbar(`The New Movie Is Added Successfully!!!`)
+
 
 }
 
 function OnRemove(ele){
   let removeId = ele.closest('.col-md-3').id
 
-  let getconfirm = confirm('Are You Want To Remove?')
-
-  if(getconfirm){
+  const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: "btn ntflx-secondary-btn ml-2",
+    cancelButton: "btn ntflx-primary-btn"
+  },
+  buttonsStyling: false
+});
+swalWithBootstrapButtons.fire({
+  title: "Are you sure?",
+  text: "You won't be able to revert this!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonText: "Yes, delete it!",
+  cancelButtonText: "No, cancel!",
+  reverseButtons: true
+}).then((result) => {
   let index = movieArr.findIndex(ele => ele.movieId == removeId )
 
   let removeObj = movieArr.splice(index,1)
@@ -143,8 +162,10 @@ function OnRemove(ele){
 
 
   ele.closest('.col-md-3').remove()
-  }
-  
+
+  snackbar(`The Movie Is Removed Successfully!!!`)
+
+});
 
 }
 
@@ -220,14 +241,10 @@ function onupdatehandl(){
  addmovie.classList.remove('d-none')
  updatemovie.classList.add('d-none')
 
+  snackbar(`The Movie Details are Updated Successfully!!!`)
+
 
 }
-
-
-
-
-
-
 
 templating(movieArr)
 showbtn.addEventListener('click',onshowhandl)
