@@ -78,6 +78,7 @@ body::after{
 
 .moviecard{
     overflow: hidden;
+    margin-top: 20px;
 }
 
 .moviecard h2{
