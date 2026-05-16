@@ -59,8 +59,8 @@ function templating(arr){
 						</figure>
 					</div>
 					<div class="card-footer d-flex justify-content-between align-items-center">
-						<button class="btn btn-sm ntflx-primary-btn" onclick='onedit(this)'>Edit</button>
-						<button class="btn btn-sm ntflx-secondary-btn" onclick ='OnRemove(this)'>Remove</button>
+						<button class="btn btn-sm ntflx-secondary-btn" onclick='onedit(this)'>Edit</button>
+						<button class="btn btn-sm ntflx-primary-btn" onclick ='OnRemove(this)'>Remove</button>
 
 			
 					</div>
@@ -119,8 +119,8 @@ function onsubmithandl(ele){
 						</figure>
 					</div>
 					<div class="card-footer d-flex justify-content-between align-items-center">
-						<button  class="btn btn-sm ntflx-primary-btn" onclick='onedit(this)'>Edit</button>
-						<button class="btn btn-sm ntflx-secondary-btn" onclick ='OnRemove(this)'>Remove</button>
+						<button  class="btn btn-sm ntflx-secondary-btn" onclick='onedit(this)'>Edit</button>
+						<button class="btn btn-sm ntflx-primary-btn" onclick ='OnRemove(this)'>Remove</button>
 
 			
 					</div>
@@ -226,8 +226,8 @@ function onupdatehandl(){
 						     </figure>
 				        </div>
 					      <div class="card-footer d-flex justify-content-between align-items-center">
-						      <button  class="btn btn-sm ntflx-primary-btn" onclick='onedit(this)'>Edit</button>
-						      <button class="btn btn-sm ntflx-secondary-btn" onclick ='OnRemove(this)'>Remove</button>
+						      <button  class="btn btn-sm ntflx-secondary-btn" onclick='onedit(this)'>Edit</button>
+						      <button class="btn btn-sm ntflx-primary-btn" onclick ='OnRemove(this)'>Remove</button>
 
 			
 					      </div>
