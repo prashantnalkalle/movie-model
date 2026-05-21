@@ -76,9 +76,11 @@ function onshowhandl(){
   backdrop.classList.toggle('active')
   movieModel.classList.toggle('active')
   movie.reset()
+  addmovie.classList.remove('d-none')
+ updatemovie.classList.add('d-none')
+  
 
 }
-
 
 function onsubmithandl(ele){
   ele.preventDefault()
@@ -92,11 +94,11 @@ function onsubmithandl(ele){
     
   }
 
-  movieArr.push(newmovie)
+  movieArr.unshift(newmovie)
 
   localStorage.setItem('movieArr',JSON.stringify(movieArr))
 
-  movie.reset()
+  // movie.reset()
 
  let div = document.createElement('div');
   div.className = 'col-md-3'
@@ -126,14 +128,14 @@ function onsubmithandl(ele){
 					</div>
 				</div>`
 
-  moviecontainer.append(div)
+  moviecontainer.prepend(div)
 
   onshowhandl();
 
   snackbar(`The New Movie Is Added Successfully!!!`)
 
 
-}
+} 
 
 function OnRemove(ele){
   let removeId = ele.closest('.col-md-3').id
@@ -206,7 +208,7 @@ function onupdatehandl(){
   localStorage.setItem('movieArr',JSON.stringify(movieArr))
 
 
-  movie.reset()
+  // movie.reset()
   let div = document.getElementById(updateId)
 
   let result =`<div class="card moviecard">

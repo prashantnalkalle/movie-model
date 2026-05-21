@@ -131,7 +131,7 @@ body::after{
     cursor: pointer;
     top: 0;
     left: 0;
-   z-index:0;
+    z-index:0;
    display: none;
    animation: fadeIn .4s ease-in-out;
 
